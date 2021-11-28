@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Подключен файл со стандартными стилями бустрап -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Последние обновления на сайте</title>
+    <title>{% block title %}Последние обновления на сайте{% endblock %}</title>
   </head>
   <body>
     <header>
@@ -23,15 +23,6 @@
       {% include 'includes/header.html' %}
       <!-- Использованы классы бустрапа для создания типовой навигации с логотипом -->
       <!-- В дальнейшем тут будет создано полноценное меню -->
-      <nav class="navbar navbar-light" style="background-color: lightskyblue">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">
-            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            <!-- тег span используется для добавления нужных стилей отдельным участкам текста -->
-            <span style="color:red">Ya</span>tube</a>
-          </a>
-        </div>
-      </nav>      
     </header>
     <main>
       {% block content %}
@@ -42,9 +33,7 @@
     <!-- border-top: создаёт тонкую линию сверху блока -->
     <!-- text-center: выравнивает текстовые блоки внутри блока по центру -->
     <!-- py-3: контент внутри размещается с отступом сверху и снизу -->         
-    <footer class="border-top text-center py-3">
-      {% include 'includes/footer.html' %}
-      <!-- тег span используется для добавления нужных стилей отдельным участкам текста --> 
-      <p>© 2021 Copyright <span style="color:red">Ya</span>tube</p>    
+    <footer>
+      {% include 'includes/footer.html' %}   
     </footer>
   </body>
